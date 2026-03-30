@@ -28,10 +28,10 @@ const readinessData = [
   { name: "Documentation", value: 88 },
 ];
 
-const getRiskColor = (level: string) => {
-  if (level === "low") return "bg-status-success text-status-success";
-  if (level === "medium") return "bg-status-warning text-status-warning";
-  return "bg-status-error text-status-error";
+const riskColorMap: Record<string, { bg: string; dot: string; bar: string }> = {
+  low: { bg: "bg-status-success", dot: "bg-status-success/60", bar: "bg-status-success" },
+  medium: { bg: "bg-status-warning", dot: "bg-status-warning/60", bar: "bg-status-warning" },
+  high: { bg: "bg-status-error", dot: "bg-status-error/60", bar: "bg-status-error" },
 };
 
 const getBarColor = (v: number) => {
@@ -63,10 +63,10 @@ const ModernizationPage = () => (
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <RadarChart data={complexityData}>
-              <PolarGrid stroke="hsl(220, 14%, 18%)" />
-              <PolarAngleAxis dataKey="subject" tick={{ fontSize: 10, fill: "hsl(215, 12%, 50%)" }} />
+              <PolarGrid stroke="hsl(220, 13%, 90%)" />
+              <PolarAngleAxis dataKey="subject" tick={{ fontSize: 10, fill: "hsl(220, 10%, 46%)" }} />
               <PolarRadiusAxis tick={false} axisLine={false} domain={[0, 100]} />
-              <Radar dataKey="value" stroke="hsl(185, 70%, 50%)" fill="hsl(185, 70%, 50%)" fillOpacity={0.15} strokeWidth={2} />
+              <Radar dataKey="value" stroke="hsl(210, 85%, 45%)" fill="hsl(210, 85%, 45%)" fillOpacity={0.15} strokeWidth={2} />
             </RadarChart>
           </ResponsiveContainer>
         </div>
@@ -75,20 +75,23 @@ const ModernizationPage = () => (
       {/* Risk Matrix */}
       <SectionCard title="Risk Exposure">
         <div className="space-y-3">
-          {riskMatrix.map(r => (
-            <div key={r.category} className="space-y-1.5">
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground">{r.category}</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono text-foreground">{r.score}/100</span>
-                  <div className={cn("h-3 w-3 rounded-full", getRiskColor(r.level).split(" ")[0] + "/60")} />
+          {riskMatrix.map(r => {
+            const colors = riskColorMap[r.level] || riskColorMap.high;
+            return (
+              <div key={r.category} className="space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-muted-foreground">{r.category}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono text-foreground">{r.score}/100</span>
+                    <div className={cn("h-3 w-3 rounded-full", colors.dot)} />
+                  </div>
+                </div>
+                <div className="h-2 rounded-full bg-muted overflow-hidden">
+                  <div className={cn("h-full rounded-full", colors.bar)} style={{ width: `${r.score}%` }} />
                 </div>
               </div>
-              <div className="h-2 rounded-full bg-muted overflow-hidden">
-                <div className={cn("h-full rounded-full", getRiskColor(r.level).split(" ")[0])} style={{ width: `${r.score}%` }} />
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </SectionCard>
 
@@ -97,10 +100,10 @@ const ModernizationPage = () => (
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={readinessData} layout="vertical" margin={{ left: 0, right: 10 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 14%, 18%)" />
-              <XAxis type="number" domain={[0, 100]} tick={{ fontSize: 10, fill: "hsl(215, 12%, 50%)" }} />
-              <YAxis type="category" dataKey="name" tick={{ fontSize: 10, fill: "hsl(215, 12%, 50%)" }} width={90} />
-              <Tooltip contentStyle={{ background: "hsl(220, 18%, 10%)", border: "1px solid hsl(220, 14%, 18%)", borderRadius: 6, fontSize: 12 }} />
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 13%, 90%)" />
+              <XAxis type="number" domain={[0, 100]} tick={{ fontSize: 10, fill: "hsl(220, 10%, 46%)" }} />
+              <YAxis type="category" dataKey="name" tick={{ fontSize: 10, fill: "hsl(220, 10%, 46%)" }} width={90} />
+              <Tooltip contentStyle={{ background: "#fff", border: "1px solid hsl(220, 13%, 90%)", borderRadius: 6, fontSize: 12 }} />
               <Bar dataKey="value" radius={[0, 4, 4, 0]}>
                 {readinessData.map((entry, i) => (
                   <Cell key={i} fill={getBarColor(entry.value)} />

@@ -24,9 +24,9 @@ const gaps = [
 ];
 
 const getCellColor = (v: number) => {
-  if (v >= 90) return "bg-status-success/80 text-background";
-  if (v >= 75) return "bg-status-warning/70 text-background";
-  return "bg-status-error/70 text-background";
+  if (v >= 90) return "bg-status-success/15 text-status-success border border-status-success/20";
+  if (v >= 75) return "bg-status-warning/15 text-status-warning border border-status-warning/20";
+  return "bg-status-error/15 text-status-error border border-status-error/20";
 };
 
 const ValidationPage = () => (
