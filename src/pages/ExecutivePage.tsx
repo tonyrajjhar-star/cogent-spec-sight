@@ -59,10 +59,10 @@ const ExecutivePage = () => (
         <div className="h-52">
           <ResponsiveContainer width="100%" height="100%">
             <RadarChart data={radarData}>
-              <PolarGrid stroke="hsl(220, 14%, 18%)" />
-              <PolarAngleAxis dataKey="subject" tick={{ fontSize: 10, fill: "hsl(215, 12%, 50%)" }} />
+              <PolarGrid stroke="hsl(220, 13%, 90%)" />
+              <PolarAngleAxis dataKey="subject" tick={{ fontSize: 10, fill: "hsl(220, 10%, 46%)" }} />
               <PolarRadiusAxis tick={false} axisLine={false} domain={[0, 100]} />
-              <Radar dataKey="value" stroke="hsl(185, 70%, 50%)" fill="hsl(185, 70%, 50%)" fillOpacity={0.15} strokeWidth={2} />
+              <Radar dataKey="value" stroke="hsl(210, 85%, 45%)" fill="hsl(210, 85%, 45%)" fillOpacity={0.15} strokeWidth={2} />
             </RadarChart>
           </ResponsiveContainer>
         </div>
