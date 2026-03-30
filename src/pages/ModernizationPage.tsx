@@ -100,10 +100,10 @@ const ModernizationPage = () => (
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={readinessData} layout="vertical" margin={{ left: 0, right: 10 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 14%, 18%)" />
-              <XAxis type="number" domain={[0, 100]} tick={{ fontSize: 10, fill: "hsl(215, 12%, 50%)" }} />
-              <YAxis type="category" dataKey="name" tick={{ fontSize: 10, fill: "hsl(215, 12%, 50%)" }} width={90} />
-              <Tooltip contentStyle={{ background: "hsl(220, 18%, 10%)", border: "1px solid hsl(220, 14%, 18%)", borderRadius: 6, fontSize: 12 }} />
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 13%, 90%)" />
+              <XAxis type="number" domain={[0, 100]} tick={{ fontSize: 10, fill: "hsl(220, 10%, 46%)" }} />
+              <YAxis type="category" dataKey="name" tick={{ fontSize: 10, fill: "hsl(220, 10%, 46%)" }} width={90} />
+              <Tooltip contentStyle={{ background: "#fff", border: "1px solid hsl(220, 13%, 90%)", borderRadius: 6, fontSize: 12 }} />
               <Bar dataKey="value" radius={[0, 4, 4, 0]}>
                 {readinessData.map((entry, i) => (
                   <Cell key={i} fill={getBarColor(entry.value)} />
