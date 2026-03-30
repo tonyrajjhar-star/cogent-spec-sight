@@ -28,10 +28,10 @@ const readinessData = [
   { name: "Documentation", value: 88 },
 ];
 
-const getRiskColor = (level: string) => {
-  if (level === "low") return "bg-status-success text-status-success";
-  if (level === "medium") return "bg-status-warning text-status-warning";
-  return "bg-status-error text-status-error";
+const riskColorMap: Record<string, { bg: string; dot: string; bar: string }> = {
+  low: { bg: "bg-status-success", dot: "bg-status-success/60", bar: "bg-status-success" },
+  medium: { bg: "bg-status-warning", dot: "bg-status-warning/60", bar: "bg-status-warning" },
+  high: { bg: "bg-status-error", dot: "bg-status-error/60", bar: "bg-status-error" },
 };
 
 const getBarColor = (v: number) => {
@@ -75,20 +75,23 @@ const ModernizationPage = () => (
       {/* Risk Matrix */}
       <SectionCard title="Risk Exposure">
         <div className="space-y-3">
-          {riskMatrix.map(r => (
-            <div key={r.category} className="space-y-1.5">
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground">{r.category}</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono text-foreground">{r.score}/100</span>
-                  <div className={cn("h-3 w-3 rounded-full", getRiskColor(r.level).split(" ")[0] + "/60")} />
+          {riskMatrix.map(r => {
+            const colors = riskColorMap[r.level] || riskColorMap.high;
+            return (
+              <div key={r.category} className="space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-muted-foreground">{r.category}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono text-foreground">{r.score}/100</span>
+                    <div className={cn("h-3 w-3 rounded-full", colors.dot)} />
+                  </div>
+                </div>
+                <div className="h-2 rounded-full bg-muted overflow-hidden">
+                  <div className={cn("h-full rounded-full", colors.bar)} style={{ width: `${r.score}%` }} />
                 </div>
               </div>
-              <div className="h-2 rounded-full bg-muted overflow-hidden">
-                <div className={cn("h-full rounded-full", getRiskColor(r.level).split(" ")[0])} style={{ width: `${r.score}%` }} />
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </SectionCard>
 
