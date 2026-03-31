@@ -1,0 +1,34 @@
+{
+  "page": {
+    "title": "Application Intake & Scope Intelligence",
+    "subtitle": "Intelligence starts before GenAI generation"
+  },
+  "sourceConfig": {
+    "title": "Source Configuration",
+    "technologies": ["COBOL", "PL/I", "RPG"],
+    "defaultTechnology": "COBOL",
+    "client": "Meridian Financial Group",
+    "application": "Core Settlement Engine",
+    "uploadText": "Drop source archive or connect to repository",
+    "uploadFormats": ".zip, .tar.gz, Git URL",
+    "submitLabel": "Begin Analysis"
+  },
+  "scopePreview": {
+    "title": "Scope Intelligence Preview",
+    "subtitle": "Pre-analysis intelligence · Estimated from intake scan",
+    "metrics": [
+      { "label": "Estimated Programs", "value": "342", "icon": "FileCode" },
+      { "label": "Copybooks Detected", "value": "127", "icon": "Layers" },
+      { "label": "Est. LOC Range", "value": "185K–210K", "icon": "BarChart3" },
+      { "label": "Analysis Depth", "value": "Full Stack", "icon": "Cpu" }
+    ],
+    "programTypes": [
+      { "type": "Batch", "count": 198, "pct": 58 },
+      { "type": "Online (CICS)", "count": 112, "pct": 33 },
+      { "type": "Utility", "count": 32, "pct": 9 }
+    ],
+    "analysisDepthLabel": "Expected Analysis Depth",
+    "analysisDepthItems": ["Structural Parsing", "Dependency Resolution", "Semantic Extraction", "Validation Pass"],
+    "programTypeLabel": "Program Type Distribution"
+  }
+}

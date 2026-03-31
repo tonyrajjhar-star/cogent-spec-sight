@@ -1,0 +1,32 @@
+{
+  "page": {
+    "title": "Human-Validated Specifications",
+    "subtitle": "Controlled human–AI collaboration with full governance"
+  },
+  "specs": [
+    {
+      "program": "SETTL-MAIN",
+      "priorConfidence": "medium",
+      "finalConfidence": "high",
+      "sectionsChanged": 4,
+      "corrections": ["Business rule refinement", "Error handling clarification"],
+      "effortReduction": 71
+    },
+    {
+      "program": "DB2-ACCESS",
+      "priorConfidence": "review",
+      "finalConfidence": "medium",
+      "sectionsChanged": 8,
+      "corrections": ["Dynamic SQL mapping", "External dependency documentation", "I/O specification"],
+      "effortReduction": 58
+    },
+    {
+      "program": "SETTL-CALC",
+      "priorConfidence": "medium",
+      "finalConfidence": "high",
+      "sectionsChanged": 3,
+      "corrections": ["Calculation logic verification"],
+      "effortReduction": 74
+    }
+  ]
+}

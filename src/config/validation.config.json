@@ -1,0 +1,36 @@
+{
+  "page": {
+    "title": "Validation & Coverage Intelligence",
+    "subtitle": "Establishing trust through measurable accuracy"
+  },
+  "summaryMetrics": [
+    { "icon": "ShieldCheck", "label": "Overall Coverage", "value": "87.3%", "subtitle": "Across all programs" },
+    { "icon": "CheckCircle2", "label": "Auto-Generated", "value": "78%", "subtitle": "No manual intervention" },
+    { "icon": "Clock", "label": "Manual Corrections", "value": "14%", "subtitle": "Post-review refinement" },
+    { "icon": "AlertTriangle", "label": "Effort Saved", "value": "62%", "subtitle": "vs. manual specification" }
+  ],
+  "heatmap": {
+    "title": "Coverage Heatmap",
+    "subtitle": "Programs × Spec Sections · Color indicates coverage depth",
+    "sections": ["Structure", "Data Flow", "Rules", "I/O", "Error Handling"],
+    "programs": [
+      { "name": "SETTL-MAIN", "values": [98, 91, 88, 95, 82] },
+      { "name": "PAY-BATCH", "values": [98, 94, 92, 97, 90] },
+      { "name": "SETTL-CALC", "values": [94, 78, 71, 85, 65] },
+      { "name": "CICS-MENU", "values": [97, 89, 85, 92, 80] },
+      { "name": "DB2-ACCESS", "values": [91, 62, 55, 70, 48] },
+      { "name": "ACCT-INQ", "values": [99, 96, 93, 98, 91] },
+      { "name": "BAL-UPD", "values": [95, 85, 80, 88, 75] }
+    ]
+  },
+  "gaps": {
+    "title": "Residual Gap Classification",
+    "subtitle": "Areas requiring additional review",
+    "items": [
+      { "type": "Dynamic SQL", "count": 12, "severity": "high" },
+      { "type": "Conditional Logic (Nested)", "count": 8, "severity": "medium" },
+      { "type": "External Dependencies", "count": 5, "severity": "high" },
+      { "type": "Undocumented Copybooks", "count": 3, "severity": "low" }
+    ]
+  }
+}

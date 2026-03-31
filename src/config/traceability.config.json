@@ -1,0 +1,29 @@
+{
+  "page": {
+    "title": "Insight-to-Code Traceability",
+    "subtitle": "Proving explainability and auditability · Modernization Insight → Spec → Code"
+  },
+  "insightLabel": "Modernization Insight",
+  "specLabel": "Specification Section",
+  "codeLabel": "Source Code Reference",
+  "traces": [
+    {
+      "insight": "Settlement calculation contains hardcoded date logic vulnerable to Y2K-style issues",
+      "specSection": "SETTL-CALC § 4.2 — Date Processing Logic",
+      "codeRef": "SETTL-CALC.cbl, PROCEDURE DIVISION, PARA-CALC-DATE (lines 842–891)",
+      "code": "COMPUTE WS-YEAR = FUNCTION INTEGER-OF-DATE(WS-DATE-IN)\n  IF WS-YEAR < 50\n    MOVE 20 TO WS-CENTURY\n  ELSE\n    MOVE 19 TO WS-CENTURY\n  END-IF"
+    },
+    {
+      "insight": "Dynamic SQL in DB2-ACCESS bypasses standard parameter binding — injection risk",
+      "specSection": "DB2-ACCESS § 2.1 — SQL Construction",
+      "codeRef": "DB2-ACCESS.cbl, PARA-BUILD-SQL (lines 312–358)",
+      "code": "STRING 'SELECT * FROM ' WS-TABLE-NAME\n  ' WHERE ' WS-COND-FIELD ' = ''' WS-COND-VALUE ''''\n  DELIMITED BY SIZE INTO WS-SQL-STMT"
+    },
+    {
+      "insight": "Orphan program UTIL-LEGACY contains reusable date utilities referenced nowhere",
+      "specSection": "Inventory Report § Orphan Analysis",
+      "codeRef": "UTIL-LEGACY.cbl, PARA-CONVERT-DATE (lines 45–102)",
+      "code": "* UTILITY: DATE CONVERSION ROUTINES\n* AUTHOR: J.SMITH 1994\n* NOTE: REPLACED BY SETTL-CALC INLINE LOGIC\n  PERFORM PARA-CONVERT-JULIAN THRU PARA-CONVERT-EXIT"
+    }
+  ]
+}
