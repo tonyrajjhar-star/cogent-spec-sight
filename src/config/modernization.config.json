@@ -1,0 +1,41 @@
+{
+  "page": {
+    "title": "Modernization & Decision Intelligence",
+    "subtitle": "Decision-grade intelligence for boardroom readiness"
+  },
+  "confidenceIndex": {
+    "label": "Modernization Confidence Index",
+    "value": "72.4",
+    "grade": "B+",
+    "description": "Moderate confidence · Review recommended for 3 risk areas"
+  },
+  "complexity": {
+    "title": "Understanding & Complexity",
+    "data": [
+      { "subject": "Business Complexity", "value": 78 },
+      { "subject": "Technical Complexity", "value": 85 },
+      { "subject": "Transparency", "value": 72 },
+      { "subject": "Rule Density", "value": 91 },
+      { "subject": "Data Complexity", "value": 68 }
+    ]
+  },
+  "risk": {
+    "title": "Risk Exposure",
+    "data": [
+      { "category": "Business Risk", "level": "medium", "score": 62 },
+      { "category": "Technical Risk", "level": "high", "score": 78 },
+      { "category": "Compliance Risk", "level": "low", "score": 35 },
+      { "category": "Data Migration Risk", "level": "medium", "score": 58 }
+    ]
+  },
+  "readiness": {
+    "title": "Modernization Readiness",
+    "data": [
+      { "name": "Decoupling", "value": 72 },
+      { "name": "Code Quality", "value": 81 },
+      { "name": "Predictability", "value": 68 },
+      { "name": "Test Coverage", "value": 45 },
+      { "name": "Documentation", "value": 88 }
+    ]
+  }
+}

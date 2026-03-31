@@ -1,0 +1,65 @@
+{
+  "page": {
+    "title": "Processing Orchestration",
+    "subtitle": "Multi-engine analysis pipeline · Not a single AI call"
+  },
+  "stages": [
+    {
+      "id": "structural",
+      "label": "Structural Analysis",
+      "status": "complete",
+      "icon": "FileText",
+      "duration": "2m 14s",
+      "metrics": [
+        { "label": "Programs Parsed", "value": "342 / 342" },
+        { "label": "Copybooks Resolved", "value": "127 / 127" },
+        { "label": "Parse Success Rate", "value": "100%" }
+      ],
+      "artifacts": ["AST Trees", "Symbol Tables", "Division Maps"]
+    },
+    {
+      "id": "dependency",
+      "label": "Dependency Mapping",
+      "status": "complete",
+      "icon": "GitBranch",
+      "duration": "1m 48s",
+      "metrics": [
+        { "label": "Call References", "value": "1,247" },
+        { "label": "Orphan Programs", "value": "3" },
+        { "label": "Cyclic Dependencies", "value": "1" }
+      ],
+      "artifacts": ["Call Graph", "Dependency Matrix", "Orphan Report"]
+    },
+    {
+      "id": "semantic",
+      "label": "Semantic Extraction",
+      "status": "active",
+      "icon": "Brain",
+      "duration": "In Progress...",
+      "metrics": [
+        { "label": "Business Rules Extracted", "value": "1,847" },
+        { "label": "Data Flow Paths", "value": "4,291" },
+        { "label": "Programs Processed", "value": "281 / 342" }
+      ],
+      "artifacts": ["Rule Catalog", "Data Lineage"]
+    },
+    {
+      "id": "specgen",
+      "label": "Specification Generation",
+      "status": "pending",
+      "icon": "FileText",
+      "duration": "—",
+      "metrics": [],
+      "artifacts": []
+    },
+    {
+      "id": "validation",
+      "label": "Coverage Validation",
+      "status": "pending",
+      "icon": "ShieldCheck",
+      "duration": "—",
+      "metrics": [],
+      "artifacts": []
+    }
+  ]
+}

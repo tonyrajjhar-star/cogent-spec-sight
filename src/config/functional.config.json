@@ -1,0 +1,17 @@
+{
+  "page": {
+    "title": "Functional Specification Mapping",
+    "subtitle": "Business understanding, not just technical output"
+  },
+  "tableTitle": "Program → Business Function Mapping",
+  "tableSubtitle": "Inferred business domains and functional clarity",
+  "mappings": [
+    { "program": "SETTL-MAIN", "domain": "Settlement", "function": "End-of-Day Settlement Processing", "clarity": 94 },
+    { "program": "PAY-BATCH", "domain": "Payments", "function": "Batch Payment Execution", "clarity": 91 },
+    { "program": "SETTL-CALC", "domain": "Settlement", "function": "Settlement Amount Calculation", "clarity": 78 },
+    { "program": "CICS-MENU", "domain": "Operations", "function": "Operator Navigation & Menu", "clarity": 88 },
+    { "program": "ACCT-INQ", "domain": "Accounts", "function": "Account Balance Inquiry", "clarity": 96 },
+    { "program": "BAL-UPD", "domain": "Accounts", "function": "Balance Update & Posting", "clarity": 85 },
+    { "program": "PAY-REPORT", "domain": "Reporting", "function": "Payment Reconciliation Report", "clarity": 92 }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "page": {
+    "title": "Pre-Processing Intelligence",
+    "subtitle": "Structural analysis, dependency mapping, logical decomposition"
+  },
+  "inventory": [
+    { "icon": "FileCode", "label": "Total Programs", "value": "342" },
+    { "icon": "Layers", "label": "Copybooks", "value": "127" },
+    { "icon": "Hash", "label": "Lines of Code", "value": "196,482" },
+    { "icon": "ArrowRight", "label": "Entry Points", "value": "89" }
+  ],
+  "dependencySection": {
+    "title": "Dependency Intelligence",
+    "subtitle": "Interactive call graph summary"
+  },
+  "callGraph": [
+    { "caller": "SETTL-MAIN", "callees": ["SETTL-CALC", "SETTL-VAL", "DB2-ACCESS"], "depth": 4 },
+    { "caller": "PAY-BATCH", "callees": ["PAY-PROC", "PAY-REPORT", "UTIL-DATE"], "depth": 3 },
+    { "caller": "CICS-MENU", "callees": ["ACCT-INQ", "BAL-UPD", "SETTL-MAIN"], "depth": 5 }
+  ],
+  "orphans": {
+    "label": "Orphan Programs",
+    "items": ["UTIL-LEGACY", "TEST-PROG1", "CONV-TEMP"]
+  },
+  "cyclicDependency": {
+    "label": "Cyclic Dependency",
+    "count": 1,
+    "detail": "SETTL-CALC ↔ SETTL-VAL"
+  },
+  "decompositionSection": {
+    "title": "Logical Decomposition",
+    "subtitle": "Business-aligned program clusters"
+  },
+  "decomposition": [
+    { "unit": "Settlement Processing", "programs": 47, "type": "Batch", "reusable": 12 },
+    { "unit": "Payment Engine", "programs": 38, "type": "Batch", "reusable": 8 },
+    { "unit": "Account Inquiry", "programs": 29, "type": "Online", "reusable": 6 },
+    { "unit": "Reporting Suite", "programs": 24, "type": "Batch", "reusable": 4 },
+    { "unit": "Data Maintenance", "programs": 18, "type": "Online", "reusable": 3 }
+  ]
+}

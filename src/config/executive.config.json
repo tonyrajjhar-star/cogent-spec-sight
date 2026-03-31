@@ -1,0 +1,40 @@
+{
+  "page": {
+    "title": "Executive Summary",
+    "subtitle": "Meridian Financial Group · Core Settlement Engine"
+  },
+  "overallConfidence": "medium",
+  "keyMetrics": [
+    { "icon": "FileCode", "label": "Programs Analyzed", "value": "342", "subtitle": "100% parse rate" },
+    { "icon": "Layers", "label": "Lines of Code", "value": "196K", "subtitle": "Across 127 copybooks" },
+    { "icon": "ShieldCheck", "label": "Avg. Coverage", "value": "87.3%", "subtitle": "Spec completeness" },
+    { "icon": "TrendingUp", "label": "Effort Saved", "value": "62%", "subtitle": "vs. manual process" }
+  ],
+  "riskPosture": {
+    "title": "Risk Posture",
+    "items": [
+      { "label": "Business Risk", "level": "medium", "color": "bg-status-warning" },
+      { "label": "Technical Risk", "level": "high", "color": "bg-status-error" },
+      { "label": "Compliance Risk", "level": "low", "color": "bg-status-success" }
+    ]
+  },
+  "modernizationReadiness": {
+    "title": "Modernization Readiness",
+    "radarData": [
+      { "subject": "Business", "value": 78 },
+      { "subject": "Technical", "value": 85 },
+      { "subject": "Compliance", "value": 65 },
+      { "subject": "Data", "value": 68 },
+      { "subject": "Readiness", "value": 72 }
+    ]
+  },
+  "confidenceIndex": {
+    "label": "Modernization Confidence Index",
+    "value": "72.4",
+    "highlights": [
+      "3 programs need review",
+      "12 dynamic SQL gaps",
+      "87% coverage achieved"
+    ]
+  }
+}

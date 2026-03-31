@@ -1,0 +1,29 @@
+{
+  "app": {
+    "name": "CodeLens AI",
+    "tagline": "Reverse Engineering",
+    "footerText": "Evidence-Backed",
+    "footerSubtext": "Reverse Engineering Platform"
+  },
+  "pipelineStages": [
+    { "id": "intake", "label": "Code Intake", "status": "complete", "metrics": "342 programs", "route": "/" },
+    { "id": "structural", "label": "Structural Analysis", "status": "complete", "metrics": "98.2% parsed", "route": "/pipeline" },
+    { "id": "dependency", "label": "Dependency Mapping", "status": "complete", "metrics": "1,247 refs", "route": "/pre-processing" },
+    { "id": "semantic", "label": "Semantic Extraction", "status": "active", "metrics": "Processing...", "route": "/specifications" },
+    { "id": "specgen", "label": "Spec Generation", "status": "pending", "route": "/functional" },
+    { "id": "validation", "label": "Validation", "status": "pending", "route": "/validation" },
+    { "id": "insights", "label": "Insights", "status": "pending", "route": "/executive" }
+  ],
+  "navigation": [
+    { "to": "/", "icon": "Upload", "label": "Application Intake", "badge": "1" },
+    { "to": "/pipeline", "icon": "Cpu", "label": "Processing Pipeline", "badge": "2" },
+    { "to": "/pre-processing", "icon": "BarChart3", "label": "Pre-Processing Intelligence", "badge": "3" },
+    { "to": "/specifications", "icon": "FileText", "label": "Program Specifications", "badge": "4" },
+    { "to": "/functional", "icon": "Layers", "label": "Functional Mapping", "badge": "5" },
+    { "to": "/validation", "icon": "ShieldCheck", "label": "Validation & Coverage", "badge": "6" },
+    { "to": "/human-validated", "icon": "UserCheck", "label": "Human-Validated Specs", "badge": "7" },
+    { "to": "/modernization", "icon": "TrendingUp", "label": "Modernization Insights", "badge": "8" },
+    { "to": "/traceability", "icon": "Link2", "label": "Insight-to-Code Trace", "badge": "9" },
+    { "to": "/executive", "icon": "LayoutDashboard", "label": "Executive Summary", "badge": "10" }
+  ]
+}

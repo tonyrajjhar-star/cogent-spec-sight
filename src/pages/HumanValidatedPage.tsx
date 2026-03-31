@@ -2,39 +2,22 @@ import { SectionCard } from "@/components/SectionCard";
 import { ConfidenceBadge } from "@/components/ConfidenceBadge";
 import { CoverageBar } from "@/components/CoverageBar";
 import { UserCheck, ArrowRight } from "lucide-react";
-
-const reviewedSpecs = [
-  {
-    program: "SETTL-MAIN", priorConfidence: "medium" as const, finalConfidence: "high" as const,
-    sectionsChanged: 4, corrections: ["Business rule refinement", "Error handling clarification"],
-    effortReduction: 71,
-  },
-  {
-    program: "DB2-ACCESS", priorConfidence: "review" as const, finalConfidence: "medium" as const,
-    sectionsChanged: 8, corrections: ["Dynamic SQL mapping", "External dependency documentation", "I/O specification"],
-    effortReduction: 58,
-  },
-  {
-    program: "SETTL-CALC", priorConfidence: "medium" as const, finalConfidence: "high" as const,
-    sectionsChanged: 3, corrections: ["Calculation logic verification"],
-    effortReduction: 74,
-  },
-];
+import config from "@/config/human-validated.config.json";
 
 const HumanValidatedPage = () => (
   <div className="space-y-6 max-w-5xl">
     <div>
-      <h1 className="text-2xl font-semibold text-foreground">Human-Validated Specifications</h1>
-      <p className="text-sm text-muted-foreground mt-1">Controlled human–AI collaboration with full governance</p>
+      <h1 className="text-2xl font-semibold text-foreground">{config.page.title}</h1>
+      <p className="text-sm text-muted-foreground mt-1">{config.page.subtitle}</p>
     </div>
 
     <div className="space-y-4">
-      {reviewedSpecs.map(s => (
+      {config.specs.map(s => (
         <SectionCard key={s.program} title={s.program} action={
           <div className="flex items-center gap-2">
-            <ConfidenceBadge level={s.priorConfidence} />
+            <ConfidenceBadge level={s.priorConfidence as "high" | "medium" | "review"} />
             <ArrowRight className="h-3 w-3 text-muted-foreground" />
-            <ConfidenceBadge level={s.finalConfidence} />
+            <ConfidenceBadge level={s.finalConfidence as "high" | "medium" | "review"} />
           </div>
         }>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
