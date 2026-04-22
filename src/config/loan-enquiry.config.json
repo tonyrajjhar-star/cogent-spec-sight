@@ -35,11 +35,8 @@
         { "label": "Accuracy", "value": 91 }
       ],
       "usage": { "used": 83, "unused": 13, "missing": 4 },
-      "programMetrics": [
-        { "label": "Total Programs", "value": "186", "icon": "FileCode" },
-        { "label": "Copybooks", "value": "47", "icon": "BookOpen" },
-        { "label": "Lines of Code", "value": "84.2K", "icon": "Code2" },
-        { "label": "Entry Points", "value": "32", "icon": "LogIn" }
+      "endpointsMetrics": [
+        { "label": "Endpoints#", "value": "186", "icon": "FileCode" }
       ]
     },
     "plsql": {
