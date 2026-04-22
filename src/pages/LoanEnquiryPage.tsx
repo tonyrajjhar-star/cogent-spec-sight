@@ -90,7 +90,7 @@ const TechSection = ({ tech }: { tech: typeof config.technologyComparison.java }
         <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium mb-2">
           {config.programLabel}
         </div>
-        <ProgramMetrics items={tech.programMetrics} />
+        <EndpointsMetrics items={tech.endpointsMetrics} usage={tech.usage} />
       </div>
     </SectionCard>
   );
