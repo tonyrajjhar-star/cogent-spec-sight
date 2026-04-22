@@ -30,31 +30,30 @@ const CoverageList = ({ items }: { items: Metric[] }) => (
   </div>
 );
 
-const UsageList = ({ usage }: { usage: Usage }) => {
-  const total = (usage.used + usage.unused + usage.missing) || 1;
-  return (
-    <div className="space-y-3">
-      <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium">
-        {config.usageLabel}
+const UsageTiles = ({ usage }: { usage: Usage }) => (
+  <div className="space-y-3">
+    <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium">
+      {config.usageLabel}
+    </div>
+    <div className="grid grid-cols-3 gap-3">
+      <div className="relative rounded-lg border border-border bg-card p-3 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-status-success" />
+        <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium">{config.usageCategories[0].label}</div>
+        <div className="text-2xl font-semibold text-foreground mt-1">{usage.used}</div>
       </div>
-      <div className="space-y-2">
-        {config.usageCategories.map((c) => {
-          const value = (usage as any)[c.key] as number;
-          const pct = (value / total) * 100;
-          return (
-            <div key={c.key} className="flex items-center gap-3">
-              <div className="w-28 text-xs text-muted-foreground">{c.label}</div>
-              <div className="flex-1 h-1.5 rounded-full bg-muted overflow-hidden">
-                <div className={`h-full rounded-full ${c.color}`} style={{ width: `${pct}%` }} />
-              </div>
-              <div className="w-10 text-right text-xs font-mono text-foreground">{value}</div>
-            </div>
-          );
-        })}
+      <div className="relative rounded-lg border border-border bg-card p-3 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-status-warning" />
+        <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium">{config.usageCategories[1].label}</div>
+        <div className="text-2xl font-semibold text-foreground mt-1">{usage.unused}</div>
+      </div>
+      <div className="relative rounded-lg border border-border bg-card p-3 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-status-error" />
+        <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium">{config.usageCategories[2].label}</div>
+        <div className="text-2xl font-semibold text-foreground mt-1">{usage.missing}</div>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 const EndpointsMetrics = ({ items, usage }: { items: { label: string; value: string; icon: string }[]; usage: Usage }) => (
   <div className="space-y-4 pt-2">
@@ -63,7 +62,7 @@ const EndpointsMetrics = ({ items, usage }: { items: { label: string; value: str
         <MetricCard key={idx} icon={getIcon(i.icon)} label={i.label} value={i.value} />
       ))}
     </div>
-    <UsageList usage={usage} />
+    <UsageTiles usage={usage} />
   </div>
 );
 
@@ -83,7 +82,7 @@ const TechSection = ({ tech }: { tech: typeof config.technologyComparison.java }
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <CoverageList items={tech.coreMetrics} />
-        <UsageList usage={tech.usage} />
+        <UsageTiles usage={tech.usage} />
       </div>
 
       <div className="mt-5 pt-5 border-t border-border">
