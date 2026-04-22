@@ -56,11 +56,14 @@ const UsageList = ({ usage }: { usage: Usage }) => {
   );
 };
 
-const ProgramMetrics = ({ items }: { items: { label: string; value: string; icon: string }[] }) => (
-  <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
-    {items.map((i, idx) => (
-      <MetricCard key={idx} icon={getIcon(i.icon)} label={i.label} value={i.value} />
-    ))}
+const EndpointsMetrics = ({ items, usage }: { items: { label: string; value: string; icon: string }[]; usage: Usage }) => (
+  <div className="space-y-4 pt-2">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+      {items.map((i, idx) => (
+        <MetricCard key={idx} icon={getIcon(i.icon)} label={i.label} value={i.value} />
+      ))}
+    </div>
+    <UsageList usage={usage} />
   </div>
 );
 
