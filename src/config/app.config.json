@@ -12,7 +12,8 @@
     { "id": "semantic", "label": "Semantic Extraction", "status": "active", "metrics": "Processing...", "route": "/specifications" },
     { "id": "specgen", "label": "Spec Generation", "status": "pending", "route": "/functional" },
     { "id": "validation", "label": "Validation", "status": "pending", "route": "/validation" },
-    { "id": "insights", "label": "Insights", "status": "pending", "route": "/executive" }
+    { "id": "insights", "label": "Insights", "status": "pending", "route": "/executive" },
+    { "id": "loan-enquiry", "label": "Loan Enquiry Generation", "status": "pending", "metrics": "Pipeline metrics", "route": "/loan-enquiry" }
   ],
   "navigation": [
     { "to": "/", "icon": "Upload", "label": "Application Intake", "badge": "1" },
@@ -24,6 +25,7 @@
     { "to": "/human-validated", "icon": "UserCheck", "label": "Human-Validated Specs", "badge": "7" },
     { "to": "/modernization", "icon": "TrendingUp", "label": "Modernization Insights", "badge": "8" },
     { "to": "/traceability", "icon": "Link2", "label": "Insight-to-Code Trace", "badge": "9" },
-    { "to": "/executive", "icon": "LayoutDashboard", "label": "Executive Summary", "badge": "10" }
+    { "to": "/executive", "icon": "LayoutDashboard", "label": "Executive Summary", "badge": "10" },
+    { "to": "/loan-enquiry", "icon": "Gauge", "label": "Loan Enquiry Generation", "badge": "11" }
   ]
 }
