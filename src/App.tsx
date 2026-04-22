@@ -14,6 +14,7 @@ import HumanValidatedPage from "@/pages/HumanValidatedPage";
 import ModernizationPage from "@/pages/ModernizationPage";
 import TraceabilityPage from "@/pages/TraceabilityPage";
 import ExecutivePage from "@/pages/ExecutivePage";
+import LoanEnquiryPage from "@/pages/LoanEnquiryPage";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/modernization" element={<ModernizationPage />} />
             <Route path="/traceability" element={<TraceabilityPage />} />
             <Route path="/executive" element={<ExecutivePage />} />
+            <Route path="/loan-enquiry" element={<LoanEnquiryPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
