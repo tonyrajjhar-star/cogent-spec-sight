@@ -6,7 +6,7 @@
   "viewSpecLabel": "View Spec",
   "coverageLabel": "Coverage Metrics",
   "usageLabel": "Overall Usage",
-  "programLabel": "Program-Level Metrics",
+  "programLabel": "Endpoints & Usage",
   "functionSpec": {
     "title": "Function Spec",
     "subtitle": "Functional specification quality metrics",
@@ -35,11 +35,8 @@
         { "label": "Accuracy", "value": 91 }
       ],
       "usage": { "used": 83, "unused": 13, "missing": 4 },
-      "programMetrics": [
-        { "label": "Total Programs", "value": "186", "icon": "FileCode" },
-        { "label": "Copybooks", "value": "47", "icon": "BookOpen" },
-        { "label": "Lines of Code", "value": "84.2K", "icon": "Code2" },
-        { "label": "Entry Points", "value": "32", "icon": "LogIn" }
+      "endpointsMetrics": [
+        { "label": "Endpoints#", "value": "186", "icon": "FileCode" }
       ]
     },
     "plsql": {
@@ -53,11 +50,8 @@
         { "label": "Coverage", "value": 84 }
       ],
       "usage": { "used": 74, "unused": 17, "missing": 9 },
-      "programMetrics": [
-        { "label": "Total Programs", "value": "124", "icon": "FileCode" },
-        { "label": "Copybooks", "value": "31", "icon": "BookOpen" },
-        { "label": "Lines of Code", "value": "52.7K", "icon": "Code2" },
-        { "label": "Entry Points", "value": "24", "icon": "LogIn" }
+      "endpointsMetrics": [
+        { "label": "Endpoints#", "value": "124", "icon": "FileCode" }
       ]
     }
   }
