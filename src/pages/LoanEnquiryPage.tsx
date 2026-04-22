@@ -62,7 +62,7 @@ const EndpointsMetrics = ({ items, usage }: { items: { label: string; value: str
         <MetricCard key={idx} icon={getIcon(i.icon)} label={i.label} value={i.value} />
       ))}
     </div>
-    <UsageList usage={usage} />
+    <UsageTiles usage={usage} />
   </div>
 );
 
@@ -82,7 +82,7 @@ const TechSection = ({ tech }: { tech: typeof config.technologyComparison.java }
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <CoverageList items={tech.coreMetrics} />
-        <UsageList usage={tech.usage} />
+        <UsageTiles usage={tech.usage} />
       </div>
 
       <div className="mt-5 pt-5 border-t border-border">
